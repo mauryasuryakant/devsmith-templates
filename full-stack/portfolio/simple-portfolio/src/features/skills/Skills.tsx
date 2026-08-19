@@ -1,4 +1,4 @@
-import { portfolioConfig } from "@/data/config";
+import { portfolioConfig } from "../../../devsmith.config";
 
 export function Skills() {
   return (

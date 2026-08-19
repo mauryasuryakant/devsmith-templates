@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { portfolioConfig } from "@/data/config";
+import { portfolioConfig } from "../../../devsmith.config";
 
 export function Navbar() {
   return (

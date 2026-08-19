@@ -5,7 +5,8 @@ export const portfolioConfig = {
     email: "mauryasuryakant99@example.com",
     github: "https://github.com/mauryasuryakant",
     linkedin: "https://linkedin.com/in/suryakant-maurya-b3b879385",
-    about: "I build clean, accessible, and performant web applications with modern technologies. I focus on backend architecture and delivering high-quality user experiences."
+    about:
+      "I build clean, accessible, and performant web applications with modern technologies. I focus on backend architecture and delivering high-quality user experiences.",
   },
   skills: [
     "TypeScript",
@@ -34,13 +35,14 @@ export const portfolioConfig = {
       role: "Senior Developer",
       company: "Tech Corp",
       period: "2021 - Present",
-      description: "Led the backend architecture and performance optimization of core services."
+      description:
+        "Led the backend architecture and performance optimization of core services.",
     },
     {
       role: "Software Engineer",
       company: "Startup Inc",
       period: "2019 - 2021",
-      description: "Developed and maintained full-stack web applications."
-    }
-  ]
+      description: "Developed and maintained full-stack web applications.",
+    },
+  ],
 };
