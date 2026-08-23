@@ -984,9 +984,10 @@ Next.js
 
 ```
 
+- Never edit AGENTS.md
+- to save agent data make a file `AGENT-DATA.md`
 
-
-These rules are mandatory unless the DevSmith template specification explicitly overrides them.
+> **AI Enforcement:** These rules are mandatory. Whenever creating, modifying, or reviewing a DevSmith template, you MUST follow every rule defined in this document, prioritize DevSmith compatibility over personal preferences, and never introduce patterns, technologies, dependencies, files, or architecture that violate these rules unless the DevSmith template specification explicitly overrides them.
 
 
 
