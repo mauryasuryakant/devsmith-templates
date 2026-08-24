@@ -1,4 +1,3 @@
-import { blogConfig } from "../../../devsmith.config";
 import { Post } from "@/types";
 import { PostCard } from "@/features/post-card";
 
@@ -8,8 +7,8 @@ interface PostGridProps {
   excludeSlug?: string;
 }
 
-export default function PostGrid({ title = "Latest Articles", posts, excludeSlug }: PostGridProps) {
-  let displayPosts = posts || blogConfig.posts;
+export default function PostGrid({ title = "Latest Articles", posts = [], excludeSlug }: PostGridProps) {
+  let displayPosts = posts;
   
   if (excludeSlug) {
     displayPosts = displayPosts.filter((post) => post.slug !== excludeSlug);

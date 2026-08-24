@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { blogConfig } from "../../../devsmith.config";
+import { blogConfig, database } from "../../../devsmith.config";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function Categories() {
+export default async function Categories() {
+  const allPosts = await database.getPosts();
+
   return (
     <section className="container mx-auto px-4 md:px-6 mb-20">
       <div className="flex items-center justify-between mb-8">
@@ -10,7 +12,7 @@ export default function Categories() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogConfig.categories.map((category) => {
-          const postCount = blogConfig.posts.filter(
+          const postCount = allPosts.filter(
             (p) => p.category.slug === category.slug
           ).length;
 

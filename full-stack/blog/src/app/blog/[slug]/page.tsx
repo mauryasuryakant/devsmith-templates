@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { blogConfig } from "../../../../devsmith.config";
+import { blogConfig, database } from "../../../../devsmith.config";
 import { Badge } from "@/components/ui/badge";
 import { Author } from "@/features/author";
 import { PostGrid } from "@/features/post-grid";
@@ -10,7 +10,7 @@ interface PostPageProps {
 
 export async function generateMetadata({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = blogConfig.posts.find((p) => p.slug === slug);
+  const post = await database.getPost(slug);
   if (!post) return { title: "Post Not Found" };
 
   return {
@@ -20,21 +20,23 @@ export async function generateMetadata({ params }: PostPageProps) {
 }
 
 export async function generateStaticParams() {
-  return blogConfig.posts.map((post) => ({
+  const posts = await database.getPosts();
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = blogConfig.posts.find((p) => p.slug === slug);
+  const post = await database.getPost(slug);
 
   if (!post) {
     notFound();
   }
 
   // Get related posts (same category, excluding current)
-  const relatedPosts = blogConfig.posts
+  const allPosts = await database.getPosts();
+  const relatedPosts = allPosts
     .filter((p) => p.category.slug === post.category.slug && p.slug !== post.slug)
     .slice(0, 3);
 

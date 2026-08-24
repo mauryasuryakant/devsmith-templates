@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { blogConfig } from "../../../../devsmith.config";
+import { blogConfig, database } from "../../../../devsmith.config";
 import { PostGrid } from "@/features/post-grid";
 import { Newsletter } from "@/features/newsletter";
 
@@ -32,7 +32,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
-  const categoryPosts = blogConfig.posts.filter(
+  const allPosts = await database.getPosts();
+  const categoryPosts = allPosts.filter(
     (post) => post.category.slug === category.slug
   );
 

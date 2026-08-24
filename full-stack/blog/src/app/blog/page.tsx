@@ -1,13 +1,14 @@
 import { PostGrid } from "@/features/post-grid";
 import { Newsletter } from "@/features/newsletter";
-import { blogConfig } from "../../../devsmith.config";
+import { blogConfig, database } from "../../../devsmith.config";
 
 export const metadata = {
   title: `Articles | ${blogConfig.name}`,
   description: "Browse all articles and insights.",
 };
 
-export default function BlogIndexPage() {
+export default async function BlogIndexPage() {
+  const posts = await database.getPosts();
   return (
     <>
       <div className="bg-muted/30 py-16 mb-12">
@@ -18,7 +19,7 @@ export default function BlogIndexPage() {
           </p>
         </div>
       </div>
-      <PostGrid title="" posts={blogConfig.posts} />
+      <PostGrid title="" posts={posts} />
       <Newsletter />
     </>
   );

@@ -1,3 +1,11 @@
+// Configure your database connection in the root .env file:
+// DATABASE_URI="your-database-connection-uri"
+
+import { mongoDatabaseService } from "./src/database/mongodb";
+// import { supabaseDatabaseService } from "./src/database/supabase";
+
+export const database = mongoDatabaseService;
+
 export const blogConfig = {
   name: "DevSmith Blog",
   tagline: "Insights for Modern Developers",
