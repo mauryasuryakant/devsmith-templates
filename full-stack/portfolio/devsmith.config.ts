@@ -1,10 +1,10 @@
 export const portfolioConfig = {
   personalInfo: {
-    name: "Maurya Suryakant",
+    name: "DevSmith",
     title: "Software Engineer",
-    email: "mauryasuryakant99@example.com",
-    github: "https://github.com/mauryasuryakant",
-    linkedin: "https://linkedin.com/in/suryakant-maurya-b3b879385",
+    email: "example@example.com",
+    github: "https://github.com",
+    linkedin: "https://linkedin.com",
     about:
       "I build clean, accessible, and performant web applications with modern technologies. I focus on backend architecture and delivering high-quality user experiences.",
   },
