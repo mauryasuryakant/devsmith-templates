@@ -17,11 +17,13 @@ export default function PostCard({ post }: PostCardProps) {
           className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
         />
       </Link>
-      <CardHeader className="p-5 pb-2">
+      <CardHeader className="p-4 md:p-6 pb-0">
         <div className="flex items-center space-x-2 mb-3">
-          <Badge variant="secondary" className="hover:bg-secondary/80">
-            {post.category.name}
-          </Badge>
+          {post.category && (
+            <Badge variant="secondary" className="bg-secondary/50 hover:bg-secondary/80">
+              {post.category.name}
+            </Badge>
+          )}
           <span className="text-xs text-muted-foreground font-medium">
             {post.readingTime}
           </span>

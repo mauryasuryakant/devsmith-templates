@@ -34,7 +34,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   const allPosts = await database.getPosts();
   const categoryPosts = allPosts.filter(
-    (post) => post.category.slug === category.slug
+    (post) => post.category?.slug === category.slug
   );
 
   return (

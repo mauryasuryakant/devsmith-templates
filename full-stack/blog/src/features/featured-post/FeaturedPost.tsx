@@ -24,9 +24,11 @@ export default async function FeaturedPost() {
           </div>
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <Badge variant="secondary" className="hover:bg-secondary/80">
-                {post.category.name}
-              </Badge>
+              {post.category && (
+                <Badge variant="secondary" className="hover:bg-secondary/80">
+                  {post.category.name}
+                </Badge>
+              )}
               <span className="text-sm text-muted-foreground">{post.readingTime}</span>
             </div>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight group-hover:text-primary transition-colors">

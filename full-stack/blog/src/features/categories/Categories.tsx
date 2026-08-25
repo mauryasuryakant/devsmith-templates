@@ -13,7 +13,7 @@ export default async function Categories() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogConfig.categories.map((category) => {
           const postCount = allPosts.filter(
-            (p) => p.category.slug === category.slug
+            (p) => p.category?.slug === category.slug
           ).length;
 
           return (

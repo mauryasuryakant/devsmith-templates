@@ -37,14 +37,14 @@ export default async function PostPage({ params }: PostPageProps) {
   // Get related posts (same category, excluding current)
   const allPosts = await database.getPosts();
   const relatedPosts = allPosts
-    .filter((p) => p.category.slug === post.category.slug && p.slug !== post.slug)
+    .filter((p) => p.category?.slug === post.category?.slug && p.slug !== post.slug)
     .slice(0, 3);
 
   return (
     <article className="pb-20">
       <header className="container mx-auto px-4 md:px-6 pt-16 pb-12 text-center max-w-4xl space-y-6">
         <div className="flex items-center justify-center space-x-3">
-          <Badge variant="secondary">{post.category.name}</Badge>
+          {post.category && <Badge variant="secondary">{post.category.name}</Badge>}
           <span className="text-sm text-muted-foreground">{post.readingTime}</span>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
