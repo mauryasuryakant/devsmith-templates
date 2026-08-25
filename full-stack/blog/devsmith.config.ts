@@ -13,7 +13,7 @@ export const blogConfig = {
   
   author: {
     name: "Maurya Suryakant",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    avatar: "https://avatars.githubusercontent.com/u/225804267?s=400&u=09fb1bc58f5682d93272d961e636e4de4cf72066&v=4",
     bio: "Software Engineer & Writer. Passionate about web development, design, and sharing knowledge.",
     twitter: "https://twitter.com/mauryasuryakant",
     github: "https://github.com/mauryasuryakant",
